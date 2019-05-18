@@ -251,7 +251,7 @@ function eventKrpanoLoaded (isWebVr) {
 	if(typeof tourLanguage == "undefined"){
 		tourLanguage = 'en';
 	}
-	ktools.I18N.getInstance().initLanguage(tourLanguage, crossDomainTargetUrl+'tour406data/tour406_messages_','.xml');
+	ktools.I18N.getInstance().initLanguage(tourLanguage, crossDomainTargetUrl+'indexdata/index_messages_','.xml');
 	krpanoLoaded = true;
 	
 	if(isWebVr){
@@ -315,7 +315,7 @@ function eventTourChangeLanguage (pLang) {
 		console.log('change tour language : '+pLang);
 	}
 	
-	ktools.I18N.getInstance().initLanguage(pLang, crossDomainTargetUrl+'tour406data/tour406_messages_','.xml');
+	ktools.I18N.getInstance().initLanguage(pLang, crossDomainTargetUrl+'indexdata/index_messages_','.xml');
 }
 
 
@@ -333,8 +333,8 @@ function addKolorFloorPlan(pPlugID, pContent)
 {
 	if(typeof ktools.KolorPluginList.getInstance().getPlugin(pPlugID) == "undefined")
 	{
-		var kolorFloorPlanCSS = new ktools.CssStyle("KolorFloorPlanCSS", crossDomainTargetUrl+"tour406data/graphics/KolorFloorPlan/kolorFloorPlan.css");
-		var kolorFloorPlanJS = new ktools.Script("KolorFloorPlanJS", crossDomainTargetUrl+"tour406data/graphics/KolorFloorPlan/KolorFloorPlan.min.js", [], true);
+		var kolorFloorPlanCSS = new ktools.CssStyle("KolorFloorPlanCSS", crossDomainTargetUrl+"indexdata/graphics/KolorFloorPlan/kolorFloorPlan.css");
+		var kolorFloorPlanJS = new ktools.Script("KolorFloorPlanJS", crossDomainTargetUrl+"indexdata/graphics/KolorFloorPlan/KolorFloorPlan.min.js", [], true);
 		var kolorFloorPlanPlugin = new ktools.KolorPlugin(pPlugID);
 		kolorFloorPlanPlugin.addScript(kolorFloorPlanJS);
 		kolorFloorPlanPlugin.addCss(kolorFloorPlanCSS);
@@ -450,7 +450,7 @@ function showKolorFloorPlan(pPlugID, pContent)
 		kolorFloorPlan.setKrpanoEngine(getKrPanoInstance());
 		
 		//set url for images
-		kolorFloorPlan.setGraphicsUrl(crossDomainTargetUrl+"tour406data/graphics/"+pPlugID.toLowerCase()+"/");
+		kolorFloorPlan.setGraphicsUrl(crossDomainTargetUrl+"indexdata/graphics/"+pPlugID.toLowerCase()+"/");
 		
 		//KolorFloorPlan is now ready
 		kolorFloorPlan.setReady(true);
@@ -491,8 +491,8 @@ function addKolorArea(pPlugID)
 {
 	if(typeof ktools.KolorPluginList.getInstance().getPlugin(pPlugID) == "undefined")
 	{
-		var kolorAreaCSS = new ktools.CssStyle("KolorAreaCSS", crossDomainTargetUrl+"tour406data/graphics/KolorArea/kolorArea.css");
-		var kolorAreaJS = new ktools.Script("KolorAreaJS", crossDomainTargetUrl+"tour406data/graphics/KolorArea/KolorArea.min.js", [], true);
+		var kolorAreaCSS = new ktools.CssStyle("KolorAreaCSS", crossDomainTargetUrl+"indexdata/graphics/KolorArea/kolorArea.css");
+		var kolorAreaJS = new ktools.Script("KolorAreaJS", crossDomainTargetUrl+"indexdata/graphics/KolorArea/KolorArea.min.js", [], true);
 		var kolorAreaPlugin = new ktools.KolorPlugin(pPlugID);
 		kolorAreaPlugin.addScript(kolorAreaJS);
 		kolorAreaPlugin.addCss(kolorAreaCSS);
